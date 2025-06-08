@@ -28,7 +28,7 @@ const AlertHistory = ({ email }) => {
     const fetchAlerts = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5000/api/news?email=${email}`);
+        const res = await axios.get(`https://newsapp-backend-jmqv.onrender.com/api/news?email=${email}`);
         setAlerts(res.data);
       } catch (error) {
         console.error("Error fetching alerts:", error);
@@ -50,7 +50,7 @@ const AlertHistory = ({ email }) => {
 
   const handleBookmark = async (alertId) => {
     try {
-      await axios.post(`http://localhost:5000/api/news/bookmark`, { 
+      await axios.post(`https://newsapp-backend-jmqv.onrender.com/api/news/bookmark`, { 
         email, 
         alertId 
       });
